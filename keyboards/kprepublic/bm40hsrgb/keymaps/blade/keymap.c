@@ -112,8 +112,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 [_LOWER] = LAYOUT_planck_mit(
     A(ES_LABK), A(ES_NTIL),   ES_AT, ES_HASH,  ES_DLR, ES_PERC, ES_CIRC,   ES_AMPR,    ES_PIPE,    ES_LPRN, ES_RPRN, KC_BSPC,
-    KC_DEL,  ES_GRV, XXXXXXX, ES_EURO , XXXXXXX, XXXXXXX, ES_QUES,   ES_IQUE,     ES_EQL,    ES_LCBR, ES_RCBR, ES_DQUO,
-    _______, KC_GRV, S(KC_GRV), XXXXXXX,  XXXXXXX, XXXXXXX, ES_EXLM,  ES_IEXL,    ES_SLSH,    ES_ASTR, ES_PLUS, _______,
+    KC_DEL,  ES_GRV, XXXXXXX, ES_EURO , XXXXXXX, XXXXXXX,  ES_IQUE,   ES_QUES,     ES_EQL,    ES_LCBR, ES_RCBR, ES_DQUO,
+    _______, KC_GRV, S(KC_GRV), XXXXXXX,  XXXXXXX, XXXXXXX, ES_IEXL,  ES_EXLM,    ES_SLSH,    ES_ASTR, ES_PLUS, _______,
     _______, _______, _______, _______, _______, _______, _______,    KC_HOME, KC_PGDN,   KC_PGUP, KC_END
 ),
 
@@ -130,8 +130,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 [_RAISE] = LAYOUT_planck_mit(
     ES_SLSH, KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,     KC_9,    KC_0,    KC_BSPC,
-    KC_DEL,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   ES_QUES, XXXXXXX,  ES_LBRC, ES_RBRC, ES_QUOT,
-    _______, KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  ES_EXLM, XXXXXXX,  KC_GRV, S(KC_GRV), _______,
+    KC_DEL,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   ES_IQUE, ES_QUES,  ES_LBRC, ES_RBRC, ES_QUOT,
+    _______, KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  ES_IEXL, ES_EXLM,  KC_GRV, S(KC_GRV), _______,
     _______, _______, _______, _______, _______, _______, _______, S(KC_HOME), S(KC_PGDN),   S(KC_PGUP), S(KC_END)
 ),
 
