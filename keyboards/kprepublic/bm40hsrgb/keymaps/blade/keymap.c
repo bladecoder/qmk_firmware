@@ -1,20 +1,9 @@
-/* Copyright 2020 tominabox1
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 2 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+/* 
+ * Spanglish layout for KPRepublic BM40 Hotswap RGB keyboard.
+ * In order to work as intended, you need to select the english layout in your OS. 
  */
 #include QMK_KEYBOARD_H
-#include "keymap_spanish.h"
+//#include "keymap_spanish.h"
 
 enum layers {
   _QWERTY,
@@ -68,7 +57,7 @@ qk_tap_dance_action_t tap_dance_actions[] = {
     // Tap once for COPY, twice for CUT
     [TD_COPY_CUT] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, dance_copy_finished, dance_copy_reset),
     [TD_PASTE_UNDO] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, dance_paste_finished, dance_paste_reset),
-    [TD_SAVE] = ACTION_TAP_DANCE_DOUBLE(KC_Q, G(KC_S)), 
+    [TD_SAVE] = ACTION_TAP_DANCE_DOUBLE(KC_Q, C(KC_S)), 
     [TD_CAPSLOCK] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, dance_caps_finished, dance_caps_reset)
 };
 
@@ -94,8 +83,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 [_QWERTY] = LAYOUT_planck_mit(
     TABNUM,         KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSPC,
-    LCTL_T(KC_ESC), KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    ES_NTIL, ES_ACUT,
-    TD(TD_CAPSLOCK),        KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    ES_COMM, ES_DOT,  ES_MINS, RSFT_T(KC_ENT),
+    LCTL_T(KC_ESC), KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
+    TD(TD_CAPSLOCK),        KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, RSFT_T(KC_ENT),
     TD(TD_COPY_CUT), TD(TD_PASTE_UNDO),KC_LALT,KC_LGUI, LOWER2,    KC_SPC       ,   RAISE,    KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT 
 ),
 
@@ -111,9 +100,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `-----------------------------------------------------------------------------------'
  */
 [_LOWER] = LAYOUT_planck_mit(
-    A(ES_LABK), A(ES_NTIL),   ES_AT, ES_HASH,  ES_DLR, ES_PERC, ES_CIRC,   ES_AMPR,    ES_PIPE,    ES_LPRN, ES_RPRN, KC_BSPC,
-    KC_DEL,  ES_GRV, XXXXXXX, ES_EURO , XXXXXXX, XXXXXXX,  ES_IQUE,   ES_QUES,     ES_EQL,    ES_LCBR, ES_RCBR, ES_DQUO,
-    _______, KC_GRV, S(KC_GRV), XXXXXXX,  XXXXXXX, XXXXXXX, ES_IEXL,  ES_EXLM,    ES_SLSH,    ES_ASTR, ES_PLUS, _______,
+    A(KC_LABK), KC_TILD,   KC_AT, KC_HASH,  KC_DLR, KC_PERC, KC_CIRC,   KC_AMPR,    KC_PIPE,    KC_LPRN, KC_RPRN, KC_BSPC,
+    KC_DEL,  KC_GRV, XXXXXXX, A(KC_E) , XXXXXXX, XXXXXXX,  A(KC_SLASH),   KC_QUES,     KC_EQL,    KC_LCBR, KC_RCBR, KC_DQUO,
+    _______, KC_GRV, S(KC_GRV), XXXXXXX,  XXXXXXX, XXXXXXX, A(KC_1),  KC_EXLM,    KC_SLSH,    KC_ASTR, KC_PLUS, _______,
     _______, _______, _______, _______, _______, _______, _______,    KC_HOME, KC_PGDN,   KC_PGUP, KC_END
 ),
 
@@ -129,9 +118,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `-----------------------------------------------------------------------------------'
  */
 [_RAISE] = LAYOUT_planck_mit(
-    ES_SLSH, KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,     KC_9,    KC_0,    KC_BSPC,
-    KC_DEL,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   ES_IQUE, ES_QUES,  ES_LBRC, ES_RBRC, ES_QUOT,
-    _______, KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  ES_IEXL, ES_EXLM,  KC_GRV, S(KC_GRV), _______,
+    KC_SLSH, KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,     KC_9,    KC_0,    KC_BSPC,
+    KC_DEL,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   A(KC_SLASH), KC_QUES,  KC_LBRC, KC_RBRC, KC_QUOT,
+    _______, KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  A(KC_1), KC_EXLM,  KC_GRV, S(KC_GRV), _______,
     _______, _______, _______, _______, _______, _______, _______, S(KC_HOME), S(KC_PGDN),   S(KC_PGUP), S(KC_END)
 ),
 
@@ -169,7 +158,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______ , KC_MUTE, KC_VOLD, KC_VOLU, KC_MFFD  , KC_MPLY   , XXXXXXX,  KC_P7,   KC_P8, KC_P9,   KC_PAST, KC_BSPC,
         _______ , C(S(G(KC_4))), C(S(G(KC_3))), S(G(KC_4)), S(G(KC_3))   , XXXXXXX, KC_BSPC, KC_P4, KC_P5, KC_P6,   KC_PPLS, KC_DEL,
         _______ , C(KC_1)   , C(KC_2)  , C(KC_3)  , C(KC_4)  , XXXXXXX , KC_INS, KC_P1, KC_P2, KC_P3,   KC_PMNS, KC_PENT,
-        KC_RCTRL , KC_RALT , _______ , _______ , _______ ,      XXXXXXX     , KC_P0, ES_DOT, ES_COMM, KC_PSLS, ES_EQL
+        KC_RCTRL , KC_RALT , _______ , _______ , _______ ,      XXXXXXX     , KC_P0, KC_DOT, KC_COMM, KC_PSLS, KC_EQL
         )
 
 };
@@ -282,10 +271,10 @@ static td_tap_t xtap_state = {
 void dance_copy_finished(qk_tap_dance_state_t *state, void *user_data) {
     xtap_state.state = cur_dance(state);
     switch (xtap_state.state) {
-        case TD_SINGLE_TAP: register_code(KC_LGUI); register_code(KC_C); break;
+        case TD_SINGLE_TAP: register_code(KC_LCTL); register_code(KC_C); break;
         case TD_SINGLE_HOLD: //register_code16(KC_HYPR /*KC_F13*/); break;
-            register_code(KC_LSFT); register_code(KC_LCTRL); register_code(KC_LALT); register_code(KC_LGUI); break;
-        case TD_DOUBLE_TAP: register_code(KC_LGUI); register_code(KC_X); break;
+            register_code(KC_LSFT); register_code(KC_LCTL); register_code(KC_LALT); register_code(KC_LGUI); break;
+        case TD_DOUBLE_TAP: register_code(KC_LCTL); register_code(KC_X); break;
         case TD_DOUBLE_HOLD: register_code(KC_RALT); break;
         default: break;
     }
@@ -293,10 +282,10 @@ void dance_copy_finished(qk_tap_dance_state_t *state, void *user_data) {
 
 void dance_copy_reset(qk_tap_dance_state_t *state, void *user_data) {
     switch (xtap_state.state) {
-        case TD_SINGLE_TAP: unregister_code(KC_C); unregister_code(KC_LGUI); break;
+        case TD_SINGLE_TAP: unregister_code(KC_C); unregister_code(KC_LCTL); break;
         case TD_SINGLE_HOLD: // unregister_code16(KC_HYPR /*KC_F13*/); break;
-            unregister_code(KC_LGUI); unregister_code(KC_LALT); unregister_code(KC_LCTRL); unregister_code(KC_LSFT); break;
-        case TD_DOUBLE_TAP: unregister_code(KC_X); unregister_code(KC_LGUI); break;
+            unregister_code(KC_LCTL); unregister_code(KC_LALT); unregister_code(KC_LCTL); unregister_code(KC_LSFT); break;
+        case TD_DOUBLE_TAP: unregister_code(KC_X); unregister_code(KC_LCTL); break;
         case TD_DOUBLE_HOLD: unregister_code(KC_RALT);break;
         default: break;
     }
@@ -306,10 +295,10 @@ void dance_copy_reset(qk_tap_dance_state_t *state, void *user_data) {
 void dance_paste_finished(qk_tap_dance_state_t *state, void *user_data) {
     xtap_state.state = cur_dance(state);
     switch (xtap_state.state) {
-        case TD_SINGLE_TAP: register_code(KC_LGUI); register_code(KC_V); break;
+        case TD_SINGLE_TAP: register_code(KC_LCTL); register_code(KC_V); break;
         case TD_SINGLE_HOLD: //register_code16(KC_HYPR /*KC_F13*/); break;
-            register_code(KC_LCTRL); register_code(KC_LALT); break;
-        case TD_DOUBLE_TAP: register_code(KC_LGUI); register_code(KC_Z); break;
+            register_code(KC_LCTL); register_code(KC_LALT); break;
+        case TD_DOUBLE_TAP: register_code(KC_LCTL); register_code(KC_Z); break;
         case TD_DOUBLE_HOLD: register_code(KC_RALT); break;
         default: break;
     }
@@ -317,10 +306,10 @@ void dance_paste_finished(qk_tap_dance_state_t *state, void *user_data) {
 
 void dance_paste_reset(qk_tap_dance_state_t *state, void *user_data) {
     switch (xtap_state.state) {
-        case TD_SINGLE_TAP: unregister_code(KC_V); unregister_code(KC_LGUI); break;
+        case TD_SINGLE_TAP: unregister_code(KC_V); unregister_code(KC_LCTL); break;
         case TD_SINGLE_HOLD: // unregister_code16(KC_HYPR /*KC_F13*/); break;
-            unregister_code(KC_LALT); unregister_code(KC_LCTRL); break;
-        case TD_DOUBLE_TAP: unregister_code(KC_Z); unregister_code(KC_LGUI); break;
+            unregister_code(KC_LALT); unregister_code(KC_LCTL); break;
+        case TD_DOUBLE_TAP: unregister_code(KC_Z); unregister_code(KC_LCTL); break;
         case TD_DOUBLE_HOLD: unregister_code(KC_RALT);break;
         default: break;
     }
