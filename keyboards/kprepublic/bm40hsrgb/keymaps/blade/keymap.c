@@ -67,7 +67,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ,-----------------------------------------------------------------------------------.
  * | Tab* |   Q  |   W  |   E  |   R  |   T  |   Y  |   U  |   I  |   O  |   P  | Bksp |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | Ctrl*|   A  |   S  |   D  |   F  |   G  |   H  |   J  |   K  |   L  |   Ñ  |  ´   |
+ * | Ctrl*|   A  |   S  |   D  |   F  |   G  |   H  |   J  |   K  |   L  |   ;  |  '   |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * | Shift|   Z  |   X  |   C  |   V  |   B  |   N  |   M  |   ,  |   .  |   /  |Shift |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
@@ -94,21 +94,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * | Del  |   `  |      |   €  |      |      |   ¿  |   ?  |   =  |   {  |   }  |  "   |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |   <  |   >  |      |      |      |   ¡  |   !  |   /  |   *  |   +  |      |
+ * |      |   <  |   >  |      |      |      |   ¡  |   !  |   *  |   +  |   -  |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |      |      |      |      |             |      | Home | Pg Dn| Pg Up|  End |
+ * |      |      |      |      |      |             |      | Home | Pg Dn| Pg Up|  End QUOT
  * `-----------------------------------------------------------------------------------'
  */
 [_LOWER] = LAYOUT_planck_mit(
-    A(KC_LABK), KC_TILD,   KC_AT, KC_HASH,  KC_DLR, KC_PERC, KC_CIRC,   KC_AMPR,    KC_PIPE,    KC_LPRN, KC_RPRN, KC_BSPC,
-    KC_DEL,  KC_GRV, XXXXXXX, A(KC_E) , XXXXXXX, XXXXXXX,  A(KC_SLASH),   KC_QUES,     KC_EQL,    KC_LCBR, KC_RCBR, KC_DQUO,
-    _______, KC_GRV, S(KC_GRV), XXXXXXX,  XXXXXXX, XXXXXXX, A(KC_1),  KC_EXLM,    KC_SLSH,    KC_ASTR, KC_PLUS, _______,
+    KC_TILD, KC_BSLS,   KC_AT, KC_HASH,  KC_DLR, KC_PERC, KC_CIRC,   KC_AMPR,    KC_PIPE,    KC_LPRN, KC_RPRN, KC_BSPC,
+    KC_DEL,  KC_GRV, XXXXXXX, A(KC_E) , XXXXXXX, XXXXXXX,  A(KC_SLASH),   KC_QUES,     KC_EQL,    KC_LCBR, KC_RCBR, A(KC_QUOT),
+    _______, KC_GRV, S(KC_GRV), XXXXXXX,  XXXXXXX, XXXXXXX, A(KC_1),  KC_EXLM,    KC_ASTR,    KC_PLUS, KC_MINUS, _______,
     _______, _______, _______, _______, _______, _______, _______,    KC_HOME, KC_PGDN,   KC_PGUP, KC_END
 ),
 
 /* Raise
  * ,-----------------------------------------------------------------------------------.
- * |   /  |   1  |   2  |   3  |   4  |   5  |   6  |   7  |   8  |   9  |   0  | Bksp |
+ * |   `  |   1  |   2  |   3  |   4  |   5  |   6  |   7  |   8  |   9  |   0  | Bksp |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * | Del  |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |      |   ¿  |   [  |   ]  |  '   |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
@@ -118,9 +118,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `-----------------------------------------------------------------------------------'
  */
 [_RAISE] = LAYOUT_planck_mit(
-    KC_SLSH, KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,     KC_9,    KC_0,    KC_BSPC,
+    KC_GRV, KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,     KC_9,    KC_0,    KC_BSPC,
     KC_DEL,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   A(KC_SLASH), KC_QUES,  KC_LBRC, KC_RBRC, KC_QUOT,
-    _______, KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  A(KC_1), KC_EXLM,  KC_GRV, S(KC_GRV), _______,
+    _______, KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  A(KC_1), A(KC_COMM),  A(KC_DOT), KC_UNDS, _______,
     _______, _______, _______, _______, _______, _______, _______, S(KC_HOME), S(KC_PGDN),   S(KC_PGUP), S(KC_END)
 ),
 
