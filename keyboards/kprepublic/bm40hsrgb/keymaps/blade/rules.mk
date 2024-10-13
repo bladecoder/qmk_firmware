@@ -26,3 +26,5 @@ LAYOUTS = planck_mit
 LAYOUTS_HAS_RGB = yes
 
 TAP_DANCE_ENABLE = yes
+
+LTO_ENABLE = yes
